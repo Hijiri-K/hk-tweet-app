@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <header>
+      <div class="header-logo">
+        <%=link_to("hk-tweet-app","/")%>
+      </div>
+      <lu class="header-menus">
+        <li><%=link_to("hk-tweet-appとは？","/about")%></li>
+        <li><%=link_to("投稿一覧","/posts/index")%></li>
+
+      </lu>
+    </header>
     <%= yield %>
   </body>
 </html>
