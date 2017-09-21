@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user,{only: [:index, :show, :edit, :update, :destroy, :logout]}
+
   def index
     @users = User.all
   end
@@ -15,9 +17,12 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: "user_image_default.jpg"
+      image_name: "user_image_default.jpg",
+      password: params[:password]
     )
     if @user.save
+      flash[:notice] = "ユーザー登録が完了しました。"
+      session[:user_id] = @user.id
       redirect_to("/posts/index")
     else
       render("users/new")
@@ -32,6 +37,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+
     if params[:image]
       @user.image_name = "#{params[:id]}.jpg"
       image = params[:image]
@@ -53,5 +59,29 @@ class UsersController < ApplicationController
     redirect_to("/posts/index")
   end
 
+  def login_form
+    @user = User.new
+  end
+
+  def login
+    @user = User.find_by(
+      email: params[:email],
+      password: params[:password]
+    )
+    if @user
+      flash[:notice] = "ログインしました。"
+      session[:user_id] = @user.id
+      redirect_to("/posts/index")
+    else
+      @error_message = "メールアドレスかパスワードがまちがってますよ～～～"
+      render("users/login_form")
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました。"
+    redirect_to("/login")
+  end
 
 end
