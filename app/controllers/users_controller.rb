@@ -56,6 +56,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.destroy
     flash[:notice] = "ユーザーを削除しました～～～～"
+    session[:user_id] = nil
     redirect_to("/login")
   end
 
