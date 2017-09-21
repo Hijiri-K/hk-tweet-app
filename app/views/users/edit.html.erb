@@ -3,7 +3,7 @@
     <h1 class="form-heading">ユーザー情報編集</h1>
     <div class="form users-form">
 
-      <%=form_tag("/users/#{@user.id}/update") do%>
+      <%=form_tag("/users/#{@user.id}/update",{multipart: true}) do%>
         <div class="form-body">
 
           <div class="form-error">
@@ -16,6 +16,8 @@
           <input type="text" name="name" value="<%=@user.name%>">
           <p>メールアドレス</p>
           <input type="text" name="email" value="<%=@user.email%>">
+          <p>ユーザー画像</p>
+          <input type="file" name="image" value="">
           <input type="submit" name="" value="保存">
         </div>
       <%end%>
