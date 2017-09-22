@@ -3,12 +3,19 @@
 <html>
   <head>
     <title>HkTweetApp</title>
+
     <!-- レスポンシブ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- awsomefontの読み込み -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
 
   </head>
 
@@ -17,7 +24,49 @@
       <div class="header-logo">
         <%=link_to("hk-tweet-app","/")%>
       </div>
+      <!-- <span class="fa fa-bars menu-icon"></span> -->
+              <!-- てすと -->
+              <div class="hidden_box">
+                  <label for="label1"><span class="fa fa-bars menu-icon"></span></label>
+                  <input type="checkbox" id="label1"/>
+                  <div class="hidden_show">
+                    <!--非表示ここから-->
+
+                    <lu class="header-menus-h h">
+
+                      <%if session[:user_id]%>
+                        <li><%=@current_user.name%></li>
+                        <li><%=link_to("投稿一覧","/posts/index")%></li>
+                        <li><%=link_to("新規投稿","/posts/new")%></li>
+                        <li><%=link_to("ユーザー一覧","/users/index")%></li>
+                        <li><%=link_to("アップデート情報","/updates")%></li>
+                        <li><%=link_to("ログアウト","/logout",{method:"post"})%></li>
+                      <%else%>
+                        <li><%=link_to("hk-tweet-appとは？","/about")%></li>
+                        <li><%=link_to("ユーザー登録","/signup")%></li>
+                        <li><%=link_to("ログイン","/login")%></li>
+                        <li><%=link_to("アップデート情報","/updates")%></li>
+                      <%end%>
+                    </lu>
+
+
+                    <!--ここまで-->
+                  </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+              <!-- テスト -->
       <lu class="header-menus">
+
         <%if session[:user_id]%>
           <li><%=@current_user.name%></li>
           <li><%=link_to("投稿一覧","/posts/index")%></li>

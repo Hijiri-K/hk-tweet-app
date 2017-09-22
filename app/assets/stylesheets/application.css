@@ -13,12 +13,13 @@
  *= require_tree .
  *= require_self
  */
- 
+
 
  /* ヘッダー ================================ */
  header {
    height: 64px;
-   position: absolute;
+   position: fixed;
+   background-color: #3ecdc6;
    z-index: 1;
    width: 100%;
  }
@@ -67,3 +68,89 @@
    margin: 0;
    font-size: 13px;
  }
+
+
+.menu-icon {
+  display: none;
+  float:right;
+  font-size: 40px;
+  line-height:80px;
+  padding-right:20px;
+  color:white;
+
+}
+
+.h {
+  display: none;
+}
+/*レスポンシブ----------------------------------------------------------------*/
+
+@media(max-width: 670px) {
+  header {
+    height: 80px;
+  }
+
+  .header-logo {
+    padding-left: 20px;
+    line-height: 80px;
+  }
+
+  .header-logo a{
+    font-size: 30px;
+  }
+
+  .header-menus {
+    display: none;
+    color: white;
+  }
+
+  .header-menus-h {
+    color: white;
+  }
+
+  .header-menus-h li {
+    font-size: 25px;
+    line-height:60px;
+    color: white;
+    border: 0.3px solid white;
+    text-align: center;
+  }
+
+  .header-menus-h a {
+    font-size: 20px;
+    color: white;
+  }
+  .menu-icon {
+    display: block;
+  }
+
+  .h {
+    display:block;
+  }
+}
+
+
+
+/*チェックは見えなくする*/
+.hidden_box input {
+    display: none;
+}
+
+/*中身を非表示にしておく*/
+.hidden_box .hidden_show {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+    position:absolute;
+    top:80px;
+    right:0px;
+    background-color:#3ecdc6;
+}
+
+/*クリックで中身表示*/
+.hidden_box input:checked + .hidden_show {
+    height: auto;
+    opacity: 1;
+}
