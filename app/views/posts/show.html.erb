@@ -2,6 +2,13 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
+      <%if @post.user_id%>
+      <div class="post-user-name">
+        <img src="<%="/user_images/#{@user.image_name}"%>" alt="">
+        <%=link_to("#{@user.name}","/users/#{@user.id}/show")%>
+      </div>
+      <%end%>
+
       <p><%=@post.content%></p>
       <div class="post-time">
         <%=@post.created_at%>

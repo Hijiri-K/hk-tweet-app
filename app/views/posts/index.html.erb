@@ -3,8 +3,19 @@
   <div class="container">
 
     <%@posts.each do |post|%>
+    <%user = User.find_by(id: post.user_id)%>
     <div class="posts-index-item">
-      <%=link_to(simple_format(post.content), "/posts/#{post.id}")%>
+      <%if post.user_id%>
+      <div class="post-left">
+        <img src="<%="/user_images/#{user.image_name}"%>" alt="">
+      </div>
+      <div class="post-user-name">
+        <%=link_to("#{user.name}","/users/#{user.id}/show")%>
+      </div>
+      <%end%>
+        <%=link_to(simple_format(post.content), "/posts/#{post.id}")%>
+
+
 
     </div>
     <%end%>
