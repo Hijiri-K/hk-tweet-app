@@ -73,7 +73,7 @@
 .menu-icon {
   display: none;
   float:right;
-  font-size: 40px;
+  font-size: 30px;
   line-height:80px;
   padding-right:20px;
   color:white;
@@ -87,12 +87,12 @@
 
 @media(max-width: 670px) {
   header {
-    height: 80px;
+    height: 64px;
   }
 
   .header-logo {
     padding-left: 20px;
-    line-height: 80px;
+    line-height: 64px;
   }
 
   .header-logo a{
