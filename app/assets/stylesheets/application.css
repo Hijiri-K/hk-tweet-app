@@ -19,8 +19,8 @@
  header {
    height: 64px;
    position: fixed;
-   background-color: #3ecdc6;
-   z-index: 1;
+   background-color: #7b5544;
+   z-index: 10;
    width: 100%;
  }
 
@@ -146,7 +146,7 @@
     position:absolute;
     top:64px;
     right:0px;
-    background-color:#3ecdc6;
+    background-color:#7b5544;
 }
 
 /*クリックで中身表示*/
