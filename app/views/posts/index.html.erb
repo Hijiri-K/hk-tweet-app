@@ -14,6 +14,18 @@
       <%end%>
         <%=link_to(simple_format(post.content), "/posts/#{post.id}")%>
 
+        <%if Like.find_by(user_id: @current_user.id, post_id: post.id)%>
+          <%=link_to("/likes/#{post.id}/destroy_index", {method:"post"}) do%>
+            <span class = "fa fa-heart like"></span>
+          <%end%>
+        <%else%>
+          <%=link_to("/likes/#{post.id}/create_index", {method:"post"}) do%>
+            <span class = "fa fa-heart unlike"></span>
+          <%end%>
+        <%end%>
+        <%likes_count = Like.where(post_id: post.id).count%>
+        <%=likes_count%>
+
 
 
     </div>
