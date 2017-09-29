@@ -44,23 +44,24 @@ form input[type="submit"] {
 
 body {
   color: #2d3133;
-  background-color: #7b5544;
+  background-color: #FFFAF0;
   margin: 0;
   min-height: 1vh;
 }
 
 .main {
   position: absolute;
-  top: 64px;
+  top: 0;
   width: 100%;
   height: auto;
   min-height: 100%;
-  background-color: #f5f8fa;
+  background-color: #FFFAF0;
 }
 
 .container {
   max-width:600px;
   margin: 60px auto;
+  padding-top: 64px;
   padding-left: 15px;
   padding-right: 15px;
   clear: both;
@@ -78,9 +79,9 @@ body {
   min-height: 100%;
   color: white;
   background-color: #7b5544;
-  background-repeat: no-repeat;
-  background-position: center 50%;
+  background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.3)),url("/background-images/cafe_top.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .top-message {
@@ -93,6 +94,7 @@ body {
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .top-main h3 {
@@ -101,27 +103,56 @@ body {
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
   margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .top-main p {
   font-size: 24px;
+  opacity: 0.8;
+}
+
+.login-signup-wrapper {
+  margin-top: 60px;
+}
+
+.login-signup-wrapper a{
+  padding:15px 40px;
+  background-color:rgba(255,255,255,.3);
+  border-radius: 3px;
+  color: rgba(255,255,255,.8);
+  margin:0 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.login-signup-wrapper :hover{
+  background-color:rgba(255,255,255,.4);
+  color: rgba(255,255,255,1);
+  border: 0.3px solid white;
 }
 
 /* about ================================ */
 .about-main {
   padding: 180px 8% 0;
   color: white;
+  background-color: #7b5544;
+  background-image: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.3)),url("/background-images/cafe_about.jpeg");
+  background-size: cover;
+  background-position: center;
 }
+
 
 .about-main h2 {
   font-size: 64px;
   font-weight: 500;
   line-height: 1.4;
+  opacity: 0.9;
 }
 
 .about-main p {
   font-weight: 200;
   font-size: 20px;
+  opacity: 0.9;
 }
 
 .about-img {
@@ -235,3 +266,28 @@ body {
   padding-left: 25px;
   text-align: left;
 }
+
+// レスポンシブ================================
+@media(max-width: 670px) {
+  .login-signup-wrapper {
+    margin-top: 30px;
+  }
+
+  .login-signup-wrapper a{
+    padding:15px 0;
+    display: block;
+    width:80%;
+    margin:20px 40px;
+    background-color:rgba(255,255,255,.3);
+    border-radius: 3px;
+    color: rgba(255,255,255,.8);
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+  .top-main p {
+    font-size: 20px;
+    opacity: 0.8;
+  }
+
+  }

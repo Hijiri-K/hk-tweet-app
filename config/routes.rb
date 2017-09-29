@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   post "likes/:id/create" => "likes#create"
   post "likes/:id/destroy" => "likes#destroy"
-    post "likes/:id/create_index" => "likes#create_index"
-post "likes/:id/destroy_index" => "likes#destroy_index"
+  post "likes/:id/create_index" => "likes#create_index"
+  post "likes/:id/destroy_index" => "likes#destroy_index"
 
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"

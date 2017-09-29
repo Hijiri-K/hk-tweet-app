@@ -20,6 +20,7 @@
    height: 64px;
    position: fixed;
    background-color: #7b5544;
+   opacity: 0.8;
    z-index: 10;
    width: 100%;
  }
@@ -46,14 +47,14 @@
    float: left;
    line-height: 64px;
    font-size: 13px;
-   color: white;
-   padding-left: 15px;
+
  }
 
  .header-menus a {
    float: left;
    font-size: 13px;
    color: white;
+   padding:0 10px;
  }
 
  .header-menus .fa {
@@ -67,6 +68,16 @@
    color: white;
    margin: 0;
    font-size: 13px;
+ }
+
+.login-btn{
+   background-color:#996a54;
+ }
+
+ .login-btn :hover {
+   background-color:#cc8d70;
+   cursor: pointer;
+
  }
 
 
@@ -83,6 +94,79 @@
 .h {
   display: none;
 }
+
+/*モーダルテスト*/
+.login-modal-wrapper, .signup-modal-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: none;
+}
+
+.modal {
+  /*position: absolute;
+  top: 20%;
+  left: 34%;*/
+  background-color: #FFFAF0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  max-width: 450px;
+  width: 80%;
+  height: auto;
+  text-align: center;
+
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+#login-form h2{
+  font-size: 24px;
+  color: #5f5d60;
+}
+
+#login-form input[type="text"],  #login-form input[type="password"], #signup-form input[type="text"],  #signup-form input[type="password"]  {
+    max-width: 320px;
+    width:80%;
+    margin-bottom: 20px;
+    font-size: 12px;
+    padding: 12px 12px;
+    border: 1px solid #d0d5d8;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.submit-btn {
+    display: inline-block;
+    width:70%;
+    padding: 14px 0;
+    background-color:#7b5544;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+#signup-form h2, #login-form h2 {
+    color: #5f5d60;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
 /*レスポンシブ----------------------------------------------------------------*/
 
 @media(max-width: 670px) {
