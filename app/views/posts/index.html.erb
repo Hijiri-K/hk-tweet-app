@@ -1,7 +1,14 @@
 
 <div class="main posts-index">
-  <div class="container">
+  <div class="new-post">
+      <%=form_tag("/posts/create") do%>
+    <textarea name="content" rows="2" cols="65"></textarea>
+    <input type="submit" name="" value="投稿">
+    <%end%>
+  </div>
 
+
+  <div class="container">
     <%@posts.each do |post|%>
     <%user = User.find_by(id: post.user_id)%>
     <div class="posts-index-item">
